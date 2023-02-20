@@ -8,6 +8,7 @@ in this project i used :
 - BlocProvider StateManagement 
 - Dio in http requests
 - Flutter offline 
+- clean coding
 
 
 

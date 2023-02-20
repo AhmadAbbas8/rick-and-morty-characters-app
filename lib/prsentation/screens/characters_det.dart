@@ -23,7 +23,7 @@ class CharactersDetScreen extends StatelessWidget {
                 color: MyColors.myGrey,
                 child: Text(
                   character.name!,
-                  style: TextStyle(
+                  style: const TextStyle(
                     color: MyColors.mtWhite,
                   ),
                   textAlign: TextAlign.start,
@@ -42,8 +42,8 @@ class CharactersDetScreen extends StatelessWidget {
             delegate: SliverChildListDelegate(
               [
                 Container(
-                  margin: EdgeInsets.fromLTRB(14, 14, 14, 0),
-                  padding: EdgeInsets.all(8),
+                  margin: const EdgeInsets.fromLTRB(14, 14, 14, 0),
+                  padding: const EdgeInsets.all(8),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -65,11 +65,11 @@ class CharactersDetScreen extends StatelessWidget {
                           title: 'episodes : ',
                           value: character.episode!.length.toString()),
                       buildMyDivider(292),
-                      SizedBox(height: 15),
+                      const SizedBox(height: 15),
                     ],
                   ),
                 ),
-                SizedBox(height: 500),
+                const SizedBox(height: 500),
               ],
             ),
           ),
@@ -84,7 +84,7 @@ class CharactersDetScreen extends StatelessWidget {
         children: [
           TextSpan(
             text: title,
-            style: TextStyle(
+            style: const TextStyle(
               color: MyColors.mtWhite,
               fontWeight: FontWeight.bold,
               fontSize: 18,
@@ -92,7 +92,7 @@ class CharactersDetScreen extends StatelessWidget {
           ),
           TextSpan(
             text: value,
-            style: TextStyle(
+            style: const TextStyle(
               color: MyColors.mtWhite,
               fontSize: 15,
             ),

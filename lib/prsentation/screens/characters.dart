@@ -23,7 +23,7 @@ class CharactersScreen extends StatelessWidget {
           bool isSearching = CharactersCubit.get(context).isSearching;
           List<Results> allCharacters =
               CharactersCubit.get(context).allCharacters;
-          List<Results> SearchedForCharacter =
+          List<Results> searchedForCharacter =
               CharactersCubit.get(context).searchingCharacters;
           return Scaffold(
             backgroundColor: MyColors.myGrey,
@@ -34,7 +34,7 @@ class CharactersScreen extends StatelessWidget {
               title: titleappBar(isSearching, context),
             ),
             body: OfflineBuilder(
-              child: Center(
+              child: const Center(
                 child: CircularProgressIndicator(
                   color: Colors.blueAccent,
                 ),
@@ -54,7 +54,7 @@ class CharactersScreen extends StatelessWidget {
                           children: [
                             GridView.builder(
                               itemCount: searchController.text.isNotEmpty
-                                  ? SearchedForCharacter.length
+                                  ? searchedForCharacter.length
                                   : allCharacters.length,
                               gridDelegate:
                                   const SliverGridDelegateWithFixedCrossAxisCount(
@@ -81,7 +81,7 @@ class CharactersScreen extends StatelessWidget {
                                     MaterialPageRoute(
                                       builder: (context) => CharactersDetScreen(
                                         character: isSearching
-                                            ? SearchedForCharacter[index]
+                                            ? searchedForCharacter[index]
                                             : allCharacters[index],
                                       ),
                                     ),
@@ -100,7 +100,7 @@ class CharactersScreen extends StatelessWidget {
                                                 image:
                                                     searchController
                                                             .text.isNotEmpty
-                                                        ? SearchedForCharacter[
+                                                        ? searchedForCharacter[
                                                                 index]
                                                             .image!
                                                         : allCharacters[index]
@@ -115,7 +115,7 @@ class CharactersScreen extends StatelessWidget {
                                     ),
                                     footer: Container(
                                       width: double.infinity,
-                                      padding: EdgeInsets.symmetric(
+                                      padding: const EdgeInsets.symmetric(
                                         horizontal: 15,
                                         vertical: 10,
                                       ),
@@ -123,9 +123,9 @@ class CharactersScreen extends StatelessWidget {
                                       alignment: Alignment.bottomCenter,
                                       child: Text(
                                         searchController.text.isNotEmpty
-                                            ? SearchedForCharacter[index].name!
+                                            ? searchedForCharacter[index].name!
                                             : allCharacters[index].name!,
-                                        style: TextStyle(
+                                        style: const TextStyle(
                                           height: 1.3,
                                           fontSize: 16,
                                           color: MyColors.mtWhite,
@@ -138,7 +138,7 @@ class CharactersScreen extends StatelessWidget {
                                     ),
                                     header: Container(
                                       width: double.infinity,
-                                      padding: EdgeInsets.symmetric(
+                                      padding: const EdgeInsets.symmetric(
                                         horizontal: 15,
                                         vertical: 10,
                                       ),
@@ -146,11 +146,11 @@ class CharactersScreen extends StatelessWidget {
                                       alignment: Alignment.topLeft,
                                       child: Text(
                                         searchController.text.isNotEmpty
-                                            ? SearchedForCharacter[index]
+                                            ? searchedForCharacter[index]
                                                 .status!
                                             : allCharacters[index].status!,
                                         style:
-                                            TextStyle(color: MyColors.mtWhite),
+                                            const TextStyle(color: MyColors.mtWhite),
                                       ),
                                     ),
                                   ),
@@ -175,15 +175,15 @@ class CharactersScreen extends StatelessWidget {
                       color: MyColors.mtWhite,
                       child: Column(
                         children: [
-                          SizedBox(height: 20),
-                          Text(
+                          const SizedBox(height: 20),
+                          const Text(
                             'Cannot Connect ... check your connectivity',
                             style: TextStyle(
                               fontSize: 15,
                               color: MyColors.myGrey,
                             ),
                           ),
-                          SizedBox(height: 10),
+                          const SizedBox(height: 10),
                           Image.asset('assets/images/4.png')
                         ],
                       ),
@@ -203,7 +203,7 @@ class CharactersScreen extends StatelessWidget {
         ? TextFormField(
             controller: searchController,
             cursorColor: MyColors.myGrey,
-            decoration: InputDecoration(
+            decoration: const InputDecoration(
               hintText: 'Find a character',
               border: InputBorder.none,
               hintStyle: TextStyle(
@@ -211,7 +211,7 @@ class CharactersScreen extends StatelessWidget {
                 fontSize: 18,
               ),
             ),
-            style: TextStyle(
+            style: const TextStyle(
               color: MyColors.myGrey,
               fontSize: 18,
             ),
@@ -221,7 +221,7 @@ class CharactersScreen extends StatelessWidget {
               // print(CharactersCubit.get(context).searchingCharacters[0].name);
             },
           )
-        : Text(
+        : const Text(
             'Characters',
             style: TextStyle(
               color: MyColors.myGrey,
@@ -249,7 +249,7 @@ class CharactersScreen extends StatelessWidget {
                 CharactersCubit.get(context).changeAppBarSearch();
                 searchController.clear();
               },
-              icon: Icon(
+              icon: const Icon(
                 Icons.clear,
                 color: MyColors.myGrey,
               ),
@@ -261,7 +261,7 @@ class CharactersScreen extends StatelessWidget {
                   CharactersCubit.get(context).changeAppBarSearch();
                   searchController.clear();
                 },
-                icon: Icon(
+                icon: const Icon(
                   Icons.search,
                   color: MyColors.myGrey,
                 ))

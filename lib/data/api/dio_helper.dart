@@ -8,8 +8,8 @@ class DioHelper {
     dio = Dio(BaseOptions(
         baseUrl: baseUrl,
         receiveDataWhenStatusError: true,
-        connectTimeout: Duration(seconds: 30),
-        receiveTimeout: Duration(seconds: 30)));
+        connectTimeout: const Duration(seconds: 30),
+        receiveTimeout: const Duration(seconds: 30)));
   }
 
   static Future<Map<String, dynamic>> getAllCharacters(

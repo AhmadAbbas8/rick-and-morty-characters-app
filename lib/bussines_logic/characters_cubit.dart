@@ -21,11 +21,10 @@ class CharactersCubit extends Cubit<CharactersState> {
     DioHelper.getAllCharacters().then((value) {
       character = Character.fromJson(value);
       allCharacters = character!.results!;
-      print('***************${character!.results![1].name}');
       emit(CharactersLoadedSuccess());
     }).catchError((onError) {
       emit(CharactersLoadedError(onError.toString()));
-      print(onError.toString());
+
     });
 
 
